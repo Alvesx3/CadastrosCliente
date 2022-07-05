@@ -2,10 +2,14 @@
 {
     public class ClienteModel:BaseModel
     {
+        public ClienteModel()
+        {
+        }
+
         public ClienteModel(string? nome, DateTime? dataNascimento, int? dDD, int? telefone, int? cEP, string? endereco, int? numero, string? complemento, string? bairro, string estado,int iD)
         {
             Nome = nome;
-            DataNascimento = dataNascimento;
+            DataNascimento = dataNascimento >= DateTime.Now ? throw new ArgumentException("Data Invalida") : dataNascimento;
             DDD = dDD;
             Telefone = telefone;
             CEP = cEP;

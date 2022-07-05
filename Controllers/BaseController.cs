@@ -26,8 +26,17 @@ namespace CadastrosCliente.Controllers
         [HttpPost]
         public ActionResult Create(M model)
         {
-            repo.Create(model);
-            return RedirectToAction(nameof(List));
+            try
+            {
+                repo.Create(model);
+                return RedirectToAction(nameof(List));
+
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
         }
         [HttpGet]
         public ActionResult Edit(int id)
@@ -37,7 +46,7 @@ namespace CadastrosCliente.Controllers
         [HttpPost]
         public ActionResult Edit(M model)
         {
-            repo.Edit(model);
+            repo.Update(model);
             return RedirectToAction(nameof(List));
         }
         public ActionResult List()
