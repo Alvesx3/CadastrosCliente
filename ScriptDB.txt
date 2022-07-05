@@ -1,0 +1,28 @@
+USE [ClienteConnection]
+GO
+
+/****** Object:  Table [dbo].[ClienteConnection]    Script Date: 05/07/2022 20:07:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ClienteConnection](
+	[ID] [int] NOT NULL,
+	[Nome] [nvarchar](50) NULL,
+	[DataNascimento] [date] NULL,
+	[DDD] [int] NULL,
+	[Telefone] [int] NULL,
+	[CEP] [int] NULL,
+	[Endereco] [nvarchar](50) NULL,
+	[Numero] [int] NULL,
+	[Complemento] [nvarchar](50) NULL,
+	[Bairro] [nvarchar](50) NULL,
+	[Estado] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_ClienteConnection] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
